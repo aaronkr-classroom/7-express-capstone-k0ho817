@@ -1,0 +1,46 @@
+<!-- contact.ejs (p. 180) -->
+<!-- @TODO: layout.ejs -->
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+
+    <!-- @TODO: -->
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Aaron's Node Site | Thanks</title>
+    <!-- @TODO: title태그를 완성하십시오 -->
+
+    <meta name="author" content="Aaron" />
+    <!-- @TODO: 자기 이름을 작성하십시오 -->
+
+    <!-- @TODO: CSS 파일에 대한 link테그를 완성하십시오 -->
+    <link rel="stylesheet" href="css/style.css" />
+    <!-- Compiled: https://codepen.io/fionnachan/pen/EvaqOB -->
+    <link rel="stylesheet" href="css/confetti.css" />
+    <link
+      rel="stylesheet"
+      media="(max-width: 768px)"
+      href="css/style.small.css"
+    />
+
+    <!-- @TODO: -->
+    <link href="css/bootstrap.min.css" rel="stylesheet" />
+
+    <!-- @TODO: JS 파일에 대한 script테그를 완성하십시오 -->
+    <script defer src="js/functions.js"></script>
+  </head>
+  <body>
+    <%- include("./parts/header.ejs"); %>
+    <%- body; %>
+    <%- include("./parts/footer.ejs"); %>
+    <script src="js/bootstrap.bundle.min.js"></script>
+  </body>
+
+  <!--
+    [노트] 레이아웃 파일은 방문하는 모든 페이지상에서 렌더링된다.
+    한 번 < %- body % >의 전후로 HTML 콘텐츠를 추가해보라. 
+    모든 페이지에 추가 내용이 반영될 것이다.
+-->
+</html>
+
+
