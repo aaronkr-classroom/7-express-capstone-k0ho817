@@ -6,18 +6,13 @@
  * 홈 컨트롤러로의 라우팅
  */
 exports.getHome = (req, res) => {
-    res.render("index");
+    res.render("index", { title : "index" });
 }
-
-exports.showCourses = (req, res) => {
-    res.render("courses");
-};
-
 exports.showSignUp = (req, res) => {
-    res.render("contact");
+    res.render("contact", { title : "contact" });
 };
 exports.postSingupForm = (req, res) => {
-    res.render("thanks")
+    res.render("thanks", { title : "thanks" })
 }
 
 /**
@@ -44,7 +39,8 @@ var courses = [
 ];
 
 exports.showCourses = (req, res) => {
-    res.render("courses", {
-    offeredCourses: courses
+    res.render("courses", { //courses.ejs파일에 아래의 값 전달
+    offeredCourses: courses,
+    title : "courses"
     });
 };

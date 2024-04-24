@@ -8,11 +8,12 @@ app = express(),
 homeController = require("./controllers/homeController"),
 errorController = require("./controllers/errorController");
 
-app.set("port", process.env.PORT || 3000);
+app.set("port", process.env.PORT || 3000); //port에 3000 설정
 app.set("/", (req, res) => {
-    res.send("Welcome to Confetti Cuisine!");
+    res.send("Welcome to Confetti Cuisine!"); // "/"에 res.send("Welcome to Confetti Cuisine!" 설정)
 });
 
+const { render } = require("ejs");
 /**
  * Listing 12.7 (p. 179)
  * ejs 레이아웃 렌더링
@@ -20,7 +21,7 @@ app.set("/", (req, res) => {
 const layouts = require("express-ejs-layouts");
 
 app.set("view engine", "ejs");
-app.use(layouts);
+app.use(layouts); // use : 모든 요청에 대해서 실행
 /**
  * Listing 12.4 (p. 177)
  * body-parser의 추가
@@ -48,6 +49,11 @@ app.post("/contact", homeController.postSingupForm);
  */
 app.use(errorController.pageNotFoundError);
 app.use(errorController.InternalServerError);
+// app.use((req, res, next) => {
+//     res.render("layout.ejs",{
+//         title : req.url
+//     });
+// });
 
 // 3000번 포트로 리스닝 설정
 app.listen(app.get("port"), () => {

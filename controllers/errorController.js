@@ -7,7 +7,7 @@ const httpStatus = require("http-status-codes");
  */
 exports.logErrors = (err, req, res, next) => {
     console.error(err.stack);
-    next(err)
+    next(err);
 };
 /**
  * Listing 12.11 (p. 184)
